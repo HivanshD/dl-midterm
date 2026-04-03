@@ -1,0 +1,12 @@
+transformers==4.56.2
+torch
+unsloth
+datasets
+trl
+accelerate
+peft
+bitsandbytes
+pandas
+numpy
+matplotlib
+lxml
