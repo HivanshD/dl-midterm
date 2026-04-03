@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model weights and checkpoints
+models/
+checkpoint-*/
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Caches
+.cache/
+huggingface_tokenizers_cache/
+unsloth_compiled_cache/
+
+# Outputs
+outputs/
+submission.csv
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Conda / environments
+.conda/
+env/
+venv/
