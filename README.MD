@@ -17,6 +17,14 @@ To reproduce our final results:
 - Final training notebook: `training/last-fintetune-run-V4.ipynb`
 - Final inference notebook: `inference/kaggle-submission-v2.ipynb`
 
+### Important Path Note
+
+The inference notebook currently uses our original Kaggle dataset path for loading model weights.
+After uploading the model weights as a Kaggle dataset, you may need to update the `adapter_path` variable in the first code cell to match your dataset path.
+On Kaggle, the model will be loaded from: /kaggle/input/<your-dataset-name>/final-model
+If your dataset name is different, update the `adapter_path` variable in the first code cell of the notebook accordingly.
+
+
 **Only the inference notebook is required to reproduce the final submission.**
 
 ---
@@ -97,8 +105,7 @@ To retrain from scratch:
    ```
    training/last-fintetune-run-V4.ipynb
    ```
-3. Training takes ~3 hours on L4 GPU
-4. Output saves to:
+3. Output saves to:
    ```
    final-model/
    ```
@@ -115,7 +122,6 @@ To retrain from scratch:
 - Effective batch size: 64
 - Max sequence length: 4096
 - Seed: 42
-
 ---
 
 ## Repository Structure
@@ -144,30 +150,3 @@ Earlier experimental runs and bugged checkpoints were removed to avoid confusion
 
 The `requirements.txt` file includes all necessary dependencies.
 
-Make sure it contains (at minimum):
-
-- transformers  
-- peft  
-- trl  
-- bitsandbytes  
-- unsloth (if used)  
-- accelerate  
-- datasets  
-- pandas  
-- numpy  
-
-If running on Kaggle or Colab, GPU-compatible versions will install automatically.
-
----
-
-## Additional Notes
-
-- All experiments use seed = 42
-- Model is trained using QLoRA (4-bit + LoRA adapters)
-- Inference includes validation and constraint enforcement to avoid invalid SVG outputs
-
----
-
-## AI Tooling Disclosure
-
-Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google) were used for coding assistance and debugging.
