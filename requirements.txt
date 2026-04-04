@@ -8,5 +8,6 @@ peft
 bitsandbytes
 pandas
 numpy
-matplotlib
 lxml
+sentencepiece
+protobuf
